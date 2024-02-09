@@ -1,0 +1,173 @@
+#+TITLE: Lógica, programación y demostración
+#+SUBTITLE: Lógica (con deducción natural), programación (con Haskell) y demostración (con Lean).
+#+AUTHOR: José A. Alonso
+#+DATE: 9 de febero de 2024
+
+* Introducción
+
++ El objetivo es mostrar las relaciones entre
+  + las demostraciones por deducción natural de la asignatura de
+    [[https://www.cs.us.es/~jalonso/cursos/li-15/][lógica informática]]. concretamente, las del tema 2
+    [[https://www.cs.us.es/~jalonso/cursos/li-15/temas/tema-2.pdf][deducción natural proposicional.]]
+  + la definición de las funciones en haskell del curso de
+    [[https://www.cs.us.es/~jalonso/cursos/i1m-19/][informática]].
+  + las demostraciones automatizadas del curso de
+    [[https://www.cs.us.es/~jalonso/cursos/m-ra-19/][razonamiento automático]].
+
+* Regla de eliminación del condicional
+
+** Pruebas de P → Q, P ⊢ Q
++ [[./src/Eliminacion_del_condicional.lean][Pruebas con Lean de P → Q, P ⊢ Q]]
++ [[./src/Eliminacion_del_condicional.hs][Pruebas con Haskell de P → Q, P ⊢ Q]]
+
+** Pruebas de P, P → Q, P → (Q → R) ⊢ R
++ [[./src/Pruebas_de_p,p→q,p→(q→r)_⊢r.lean][Pruebas con Lean de P, P → Q, P → (Q → R) ⊢ R]]
++ [[./src/Pruebas_de_p,p→q,p→(q→r)_⊢r.hs][Pruebas con Haskell de P, P → Q, P → (Q → R) ⊢ R]]
+
+* Regla introducción del condicional
+
+** Pruebas de P → P
++ [[./src/Introduccion_del_condicional.lean][Pruebas con Lean de P → P]]
++ [[./src/Introduccion_del_condicional.hs][Pruebas con Haskell de P → P]]
+
+** Pruebas de P → (Q → P)
++ [[./src/Pruebas_de_P→(Q→P).lean][Pruebas con Lean de P → (Q → P)]]
++ [[./src/Pruebas_de_P→(Q→P).hs][Pruebas con Haskell de P → (Q → P)]]
+
+** Pruebas de P → Q, Q → R ⊢ P → R
++ [[./src/Pruebas_del_silogismo_hipotetico.lean][Pruebas con Lean de P → Q, Q → R ⊢ P → R]]
++ [[./src/Pruebas_del_silogismo_hipotetico.hs][Pruebas con Haskell de P → Q, Q → R ⊢ P → R]]
+
+** Correspondencia entre Lógica y Haskell
+|---------------+---------|
+| Lógica        | Haskell |
+|---------------+---------|
+| Proposiciones | Tipos   |
+| P -> Q        | P -> Q  |
+|---------------+---------|
+
+* Reglas de la conjunción
+
+** Pruebas de P ∧ Q, R ⊢ Q ∧ R
++ [[./src/Reglas_de_la_conjuncion.lean][Pruebas con Lean de P ∧ Q, R ⊢ Q ∧ R]]
++ [[./src/Reglas_de_la_conjuncion.hs][Pruebas con Haskell de P ∧ Q, R ⊢ Q ∧ R]]
+
+** Pruebas de P ∧ Q → Q ∧ P
++ [[./src/Pruebas_de_P∧Q→Q∧P.lean][Pruebas con Lean de P ∧ Q → Q ∧ P]]
++ [[./src/Pruebas_de_P∧Q→Q∧P.hs][Pruebas con Haskell de P ∧ Q → Q ∧ P]]
+
+** Correspondencia entre Lógica y Haskell
+|---------------+---------|
+| Lógica        | Haskell |
+|---------------+---------|
+| Proposiciones | Tipos   |
+| P -> Q        | P -> Q  |
+| P ∧ Q         | (P, Q)  |
+|---------------+---------|
+
+* Reglas de la negación
+
+** Pruebas de ⊥ ⊢ P
++ [[./src/Reglas_de_la_negacion_1.lean][Pruebas con Lean de ⊥ ⊢ P]]
++ [[./src/Reglas_de_la_negacion_1.hs][Pruebas con Haskell de ⊥ ⊢ P]]
+
+** Correspondencia entre Lógica y Haskell
+|---------------+---------|
+| Lógica        | Haskell |
+|---------------+---------|
+| Proposiciones | Tipos   |
+| P -> Q        | P -> Q  |
+| P ∧ Q         | (P, Q)  |
+| False         | Void    |
+|---------------+---------|
+
+** Pruebas de la eliminación de la negación P, ¬P ⊢ ⊥
++ [[./src/Reglas_de_la_negacion_2.lean][Pruebas con Lean de P, ¬P ⊢ ⊥]]
++ [[./src/Reglas_de_la_negacion_2.hs][Pruebas con Haskell de P, ¬P ⊢ ⊥]]
+
+** Correspondencia entre Lógica y Haskell
+|---------------+-----------|
+| Lógica        | Haskell   |
+|---------------+-----------|
+| Proposiciones | Tipos     |
+| P -> Q        | P -> Q    |
+| P ∧ Q         | (P, Q)    |
+| False         | Void      |
+| ¬P            | P -> Void |
+|---------------+-----------|
+
+** Pruebas de ¬(P ∧ ¬P)
++ [[./src/Reglas_de_la_negacion_3.lean][Pruebas con Lean de ¬(P ∧ ¬P)]]
++ [[./src/Reglas_de_la_negacion_3.hs][Pruebas con Haskell de ¬(P ∧ ¬P)]]
+
+** Pruebas de P → Q, P → ¬Q ⊢ ¬P
++ [[./src/Pruebas_de_P→Q,P→¬Q⊢¬P.lean][Pruebas con Lean de P → Q, P → ¬Q ⊢ ¬P]]
++ [[./src/Pruebas_de_P→Q,P→¬Q⊢¬P.hs][Pruebas con Haskell de P → Q, P → ¬Q ⊢ ¬P]]
+
+** Pruebas del modus tollens: P → Q, ¬Q ⊢ ¬P
++ [[./src/Pruebas_del_modus_tollens.lean][Pruebas con Lean del modus tollens: P → Q, ¬Q ⊢ ¬P]]
++ [[./src/Pruebas_del_modus_tollens.hs][Pruebas con Haskell del modus tollens: P → Q, ¬Q ⊢ ¬P]]
+
+** Pruebas de P → (Q → R), P, ¬R ⊢ ¬Q
++ [[./src/Pruebas_de_P→(Q→R),P,¬R⊢¬Q.lean][Pruebas con Lean de P → (Q → R), P, ¬R ⊢ ¬Q]]
++ [[./src/Pruebas_de_P→(Q→R),P,¬R⊢¬Q.hs][Pruebas con Haskell de P → (Q → R), P, ¬R ⊢ ¬Q]]
+
+** Regla de introducción de la doble negación: P ⊢ ¬¬P
++ [[./src/Prueba_de_la_regla_de_introduccion_de_la_doble_negacion.lean][Prueba con Lean de la introducción de la doble negación: P ⊢ ¬¬P]]
++ [[./src/Prueba_de_la_regla_de_introduccion_de_la_doble_negacion.hs][Prueba con Haskell de la introducción de la doble negación: P ⊢ ¬¬P]]
+
+** Pruebas de ¬Q → ¬P ⊢ P → ¬¬Q
++ [[./src/Pruebas_de_¬Q→¬P⊢P→¬¬Q.lean][Pruebas con Lean de ¬Q → ¬P ⊢ P → ¬¬Q]]
++ [[./src/Pruebas_de_¬Q→¬P⊢P→¬¬Q.hs][Pruebas con Haskell de ¬Q → ¬P ⊢ P → ¬¬Q]]
+
+* Reglas de la disyunción
+
+** Pruebas de la introducción de la disyunción
++ [[./src/Reglas_de_introduccion_de_la_disyuncion.lean][Pruebas con Lean de la introducción de la disyunción]]
++ [[./src/Reglas_de_introduccion_de_la_disyuncion.hs][Pruebas con Haskell de la introducción de la disyunción]]
+
+** Pruebas de P ∧ Q ⊢ P ∨ R
++ [[./src/Pruebas_de_P∧Q⊢P∨R.lean][Pruebas con Lean de P ∧ Q ⊢ P ∨ R]]
++ [[./src/Pruebas_de_P∧Q⊢P∨R.hs][Pruebas con Haskell de P ∧ Q ⊢ P ∨ R]]
+
+** Pruebas de P ∧ Q ⊢ R ∨ Q
++ [[./src/Pruebas_de_P∧Q⊢R∨Q.lean][Pruebas con Lean de P ∧ Q ⊢ R ∨ Q]]
++ [[./src/Pruebas_de_P∧Q⊢R∨Q.hs][Pruebas con Haskell de P ∧ Q ⊢ R ∨ Q]]
+
+** Regla de eliminación de la disyunción
++ [[./src/Regla_de_eliminacion_de_la_disyuncion.lean][Prueba en Lean de la regla de eliminación de la disyunción]]
++ [[./src/Regla_de_eliminacion_de_la_disyuncion.hs][Prueba en Haskell de la regla de eliminación de la disyunción]]
+
+** Pruebas de P ∨ Q ⊢ Q ∨ P
++ [[./src/Pruebas_de_P∨Q⊢Q∨P.lean][Pruebas con Lean de P ∨ Q ⊢ Q ∨ P]]
++ [[./src/Pruebas_de_P∨Q⊢Q∨P.hs][Pruebas con Haskell de P ∨ Q ⊢ Q ∨ P]]
+
+** Correspondencia entre Lógica y Haskell
+|---------------+------------|
+| Lógica        | Haskell    |
+|---------------+------------|
+| Proposiciones | Tipos      |
+| P -> Q        | P -> Q     |
+| P ∧ Q         | (P, Q)     |
+| False         | Void       |
+| ¬P            | P -> Void  |
+| P ∨ Q         | Either P Q |
+|---------------+------------|
+
+** Pruebas de Q → R ⊢ P ∨ Q → P ∨ R
++ [[./src/Pruebas_de_Q→R⊢P∨Q→P∨R.lean][Pruebas con Lean de Q → R ⊢ P ∨ Q → P ∨ R]]
++ [[./src/Pruebas_de_Q→R⊢P∨Q→P∨R.hs][Pruebas con Haskell de Q → R ⊢ P ∨ Q → P ∨ R]]
+
+** Pruebas de ¬P ∨ Q ⊢ P → Q
++ [[./src/Prueba_de_¬P∨Q⊢P→Q.lean][Pruebas con Lean de ¬P ∨ Q ⊢ P → Q]]
++ [[./src/Prueba_de_¬P∨Q⊢P→Q.hs][Pruebas con Haskell de ¬P ∨ Q ⊢ P → Q]]
+
+* Reglas de la lógica clásica
+
+** [[./src/Pruebas_de_la_eliminacion_de_la_doble_negacion.lean][Pruebas con Lean de la eliminación de la doble negación]]
+** [[./src/Prueba_de_la_regla_de_reduccion_al_absurdo.lean][Pruebas con Lean de la regla de reducción al absurdo]]
+** [[./src/Pruebas_del_principio_del_tercio_excluso.lean][Pruebas con Lean del principio del tercio excluso]]
+** [[./src/Pruebas_de_P→Q⊢¬P∨Q.lean][Pruebas con Lean de P → Q ⊢ ¬P ∨ Q]]
+** [[./src/Pruebas_de_P,¬¬(Q∧R)⊢¬¬P∧R.lean][Pruebas con Lean de P, ¬¬(Q ∧ R) ⊢ ¬¬P ∧ R]]
+** [[./src/Pruebas_de_¬P→Q,¬Q⊢P.lean][Pruebas con Lean de ¬P → Q, ¬Q ⊢ P]]
+** [[./src/Pruebas_de_(Q→R)→((¬Q→¬P)→(P→R)).lean][Pruebas con Lean de (Q → R) → ((¬Q → ¬P) → (P → R))]]
