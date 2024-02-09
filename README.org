@@ -164,10 +164,10 @@
 
 * Reglas de la lógica clásica
 
-** [[./src/Pruebas_de_la_eliminacion_de_la_doble_negacion.lean][Pruebas con Lean de la eliminación de la doble negación]]
-** [[./src/Prueba_de_la_regla_de_reduccion_al_absurdo.lean][Pruebas con Lean de la regla de reducción al absurdo]]
-** [[./src/Pruebas_del_principio_del_tercio_excluso.lean][Pruebas con Lean del principio del tercio excluso]]
-** [[./src/Pruebas_de_P→Q⊢¬P∨Q.lean][Pruebas con Lean de P → Q ⊢ ¬P ∨ Q]]
-** [[./src/Pruebas_de_P,¬¬(Q∧R)⊢¬¬P∧R.lean][Pruebas con Lean de P, ¬¬(Q ∧ R) ⊢ ¬¬P ∧ R]]
-** [[./src/Pruebas_de_¬P→Q,¬Q⊢P.lean][Pruebas con Lean de ¬P → Q, ¬Q ⊢ P]]
-** [[./src/Pruebas_de_(Q→R)→((¬Q→¬P)→(P→R)).lean][Pruebas con Lean de (Q → R) → ((¬Q → ¬P) → (P → R))]]
++ [[./src/Pruebas_de_la_eliminacion_de_la_doble_negacion.lean][Pruebas con Lean de la eliminación de la doble negación]]
++ [[./src/Prueba_de_la_regla_de_reduccion_al_absurdo.lean][Pruebas con Lean de la regla de reducción al absurdo]]
++ [[./src/Pruebas_del_principio_del_tercio_excluso.lean][Pruebas con Lean del principio del tercio excluso]]
++ [[./src/Pruebas_de_P→Q⊢¬P∨Q.lean][Pruebas con Lean de P → Q ⊢ ¬P ∨ Q]]
++ [[./src/Pruebas_de_P,¬¬(Q∧R)⊢¬¬P∧R.lean][Pruebas con Lean de P, ¬¬(Q ∧ R) ⊢ ¬¬P ∧ R]]
++ [[./src/Pruebas_de_¬P→Q,¬Q⊢P.lean][Pruebas con Lean de ¬P → Q, ¬Q ⊢ P]]
++ [[./src/Pruebas_de_(Q→R)→((¬Q→¬P)→(P→R)).lean][Pruebas con Lean de (Q → R) → ((¬Q → ¬P) → (P → R))]]
