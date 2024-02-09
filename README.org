@@ -21,8 +21,8 @@
 + [[./src/Eliminacion_del_condicional.hs][Pruebas con Haskell de P → Q, P ⊢ Q]]
 
 ** Pruebas de P, P → Q, P → (Q → R) ⊢ R
-+ [[./src/Pruebas_de_p,p→q,p→q→r_⊢r.lean][Pruebas con Lean de P, P → Q, P → (Q → R) ⊢ R]]
-+ [[./src/Pruebas_de_p,p→q,p→q→r_⊢r.hs][Pruebas con Haskell de P, P → Q, P → (Q → R) ⊢ R]]
++ [[./src/Pruebas_de_P,P→Q,P→(Q→R)_⊢R.lean][Pruebas con Lean de P, P → Q, P → (Q → R) ⊢ R]]
++ [[./src/Pruebas_de_P,P→Q,P→(Q→R)_⊢R.hs][Pruebas con Haskell de P, P → Q, P → (Q → R) ⊢ R]]
 
 * Regla introducción del condicional
 
