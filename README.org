@@ -2,6 +2,7 @@
 #+SUBTITLE: Lógica (con deducción natural), programación (con Haskell) y demostración (con Lean).
 #+AUTHOR: José A. Alonso
 #+DATE: 9 de febero de 2024
+#+OPTIONS: num:t
 
 * Introducción
 
